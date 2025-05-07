@@ -58,8 +58,8 @@ MediaPipe is optimized for real-time, on-device processing, making it ideal for 
 
 1. **Clone the repository:**
     ```
-    git clone https://github.com/Anshuman2305/rps_project.git
-    cd rps_project
+    git clone https://github.com/65Kriti/Rock-Paper-Scissor.git
+    cd Rock-Paper-Scissor
     ```
 
 2. **Open `index.html` in your browser.**
