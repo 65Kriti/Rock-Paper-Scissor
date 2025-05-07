@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Nunito+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <body
+    class="bg-gray-900 min-h-screen flex items-center justify-center font-sans text-gray-100 mx-4 my-6 lg:my-0"
+  >
+    <div class="flex flex-col items-center justify-center w-full">
+      <a
+        href="."
+        class="text-3xl md:text-5xl font-bold mb-8 text-center tracking-tight animate__animated animate__bounceInDown"
+        >Rock Paper Scissors</a
+      >
+      <div
+        class="bg-gray-800 rounded-xl shadow-lg p-6 md:p-10 w-full max-w-xl flex flex-col items-center justify-center animate__animated animate__fadeInUp"
+      >
+        <div
+          id="video-container"
+          class="relative flex flex-col items-center justify-center mb-6"
+        >
+          <video
+            id="video"
+            width="480"
+            height="360"
+            playsinline
+            autoplay
+            muted
+            class="rounded-lg scale-x-[-1] hidden"
+          ></video>
+          <canvas
+            id="canvas"
+            class="absolute rounded-lg pointer-events-none scale-x-[-1] hidden w-full h-full"
+          ></canvas>
+        </div>
+        <div id="score" class="text-lg font-semibold text-center"></div>
+        <div id="round" class="text-md text-center"></div>
+        <div
+          id="result"
+          class="text-lg md:text-xl font-bold text-center bg-gray-700 rounded-lg my-4 py-3 px-6 shadow-md hidden"
+        ></div>
+        <div
+          id="winner"
+          class="text-2xl font-extrabold text-green-400 text-center"
+        ></div>
+        <div class="flex flex-row items-center justify-center">
+          <button
+            id="start"
+            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition mb-4 animate-pulse"
+          >
+            Start Game
+          </button>
+          <button
+            id="nextround"
+            class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-full transition mb-4 hidden"
+          >
+            Next Round
+          </button>
+          <button
+            id="playagain"
+            class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-full transition mb-4 mt-6 hidden"
+          >
+            Play Again
+          </button>
+        </div>
+        <div
+          class="flex flex-row items-center justify-center space-x-6 text-4xl mt-4 mb-4"
+        >
+          <span class="move-emoji" title="Rock">✊</span>
+          <span class="move-emoji" title="Paper">✋</span>
+          <span class="move-emoji" title="Scissors">✌️</span>
+        </div>
+        <p class="instructions text-center text-gray-300 mb-4">
+          Show your hand gesture in front of the camera!
+        </p>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+    <script>
+      // Show video and canvas after clicking "Start Game"
+      document.getElementById("start").addEventListener("click", function () {
+        document.getElementById("video").classList.remove("hidden");
+        document.getElementById("canvas").classList.remove("hidden");
+        document.getElementById("playagain").classList.remove("hidden");
+        // Optionally, hide the start button if you want
+        // document.getElementById('start').classList.add('hidden');
+      });
+
+      // Example: Show Next Round and Play Again buttons as needed in your game logic
+      // document.getElementById('nextround').classList.remove('hidden');
+      // document.getElementById('playagain').classList.remove('hidden');
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
